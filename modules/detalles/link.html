@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style2.css">
+    <script type="text/javascript" src="../../js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <!-- Barra de Navegacion -->
+    <!-- style="background-image: linear-gradient(to bottom,#343434, rgba(253, 253, 253, 0));" -->
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTM5JyBoZWlnaHQ9JzMwJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxnIGZpbGw9JyNGRkYnIGZpbGwtcnVsZT0nbm9uemVybyc+PHBhdGggZD0nTTEzMy4yMTggMTUuMTY5bC0yLjIyNi4wMDEuMTU3LS4yNzdjLjM2My0uNjQyLjc0NC0uODQ4IDEuNTctLjg0OGgxLjEzNmwtLjYzNyAxLjEyNHonLz48cGF0aCBkPSdNMTMwLjgxNSAxOS41MTRsMi4wNDYtMy42MTJoLTIuMjI2bC0xLjc2NiAzLjExOWMtLjIuMzUxLS40NzEuNDk0LS45MzkuNDk1bC01LjQxLjAwMiAyLjE4OC0zLjg2NGMuMzA4LS41NDQuNDI1LS41ODMgMS4xNDYtLjU4M2guNjQ2Yy42MzIgMCAuOTMtLjE1IDEuMTgtLjU5bC4zMDEtLjUzNS0yLjMwNy4wMDEuOTkzLTEuNzU0LTEuNDU1LjAwMWMtLjYzNCAwLS45MzEuMTQ4LTEuMTc5LjU4NWwtLjY2MSAxLjE2OWgtMS4yMTFsLS42MzcgMS4xMjVoMS4yMTJsLTIuMjM5IDMuOTUyYy0uMTk4LjM1LS40Ny40OTQtLjkzNi40OTRsLTQuODA3LjAwMiAyLjU1Ni00LjEwMWgtMS43NjVjLS40MTIgMC0uNTg5LjExOC0uODQ3LjM4OC0uMDAxLS4yOTYtLjEyMi0uMzg4LS40NDUtLjM4OC0uNDA4IDAtLjgxNi0uMDAyLTEuMjI1LS4wMDEtMi4wMDggMC0zLjEzLjU0NS00LjAwMyAxLjk0NGwtMS4wNCAxLjY2OWMtLjIxNy4zNDgtLjQ4OC40OS0uOTM1LjQ5bC0zLjA5Ny4wMDFjLTEuMTIyIDAtMS41Ni0uMTQxLTEuNjg1LS42NTctLjEzNC0uNTU2LjE1LTEuMDA4IDEuNjUyLTEuODgybC44NS0uNDk0Yy4zOTYtLjIzLjU1NS0uMzUuNTAzLS42LS4wNDgtLjIyNC0uMjAyLS40Ny0xLjQyOS0uNDdsLTUuODI1LjAwMWMtLjYxNiAwLS45MDMuMTQ0LTEuMTgyLjU5bC0xLjg4NCAzLjAyNWMtLjIxNy4zNDctLjQ4OC40ODgtLjkzNS40ODhoLTkuMzVsLjQtMS4wM2g0LjY2OGMuOTIxIDAgMS4zMDMtLjIwOCAxLjYzNS0uODk1bC40NDYtLjkyMWMuMTEyLS4yMzEuMjA2LS41Ni4wMTYtLjgxLS4yMi0uMjkyLS43ODQtLjQ0Ni0xLjYzMi0uNDQ2aC00LjQ4M2MtMS40MzMgMC0yLjA4Ny4zNS0yLjU5IDEuMzlsLS45MyAxLjkyNGMtLjMxOS42NTYtLjgyMy43ODgtMS41MzQuNzg4aC0zLjIwN2wuMjAyLS4yNjZjLjYzNS0uODM3LjUxMy0xLjc2OC0uMzM0LTIuNTU0LS44MzEtLjc3Mi0xLjkzNS0xLjA0NS0yLjkxMy0xLjI4M2gtMi40OTRsLTEuNzE1IDIuNzUyYy0uNzE1IDEuMTQ4LTEuNDkzIDEuMzUtMi44NjQgMS4zNUg2NC4zMmwyLjU1Ny00LjEwM2gtMS43NzJjLS40MTIgMC0uNTg5LjExOC0uODQ2LjM4OC0uMDAyLS4yOTYtLjEyMy0uMzg4LS40NDYtLjM4OC0uNDA2IDAtLjgxMS0uMDAyLTEuMjE4LS4wMDEtMi4wMDggMC0zLjEzLjU0NS00LjAwMyAxLjk0NGwtMS4wNCAxLjY2OWMtLjIxOS4zNS0uNDguNDg4LS45MzUuNDg4bC00LjYtLjAwMiAzLjktNi4yNTdjLjIyOC0uMzY2LS4wNzQtLjgxMy0uNTUtLjgxM0gzNy4xMDZjLTEuMjQgMC0xLjg1My4yNzYtMi40NCAxLjE1MWw3Ljg5Ni4wMDQtNC40MDEgNy4wNmgyLjI3M2w0LjQtNy4wNiAzLjE2Mi4wMDItNC40IDcuMDU4aDIuMjczbDQuNC03LjA1N2gzLjE2MUw0OS44IDE5LjQzNGMtLjE2Ni4yNjctLjMyNy42MzktLjE1Mi44OTguMTQ3LjIxNy41MTYuMzMyIDEuMDY4LjMzMmg1Ljk5Yy4yOTMgMCAuNDItLjA4NC42MDItLjI3Ni4wMDIuMjEuMjAzLjI3Ni40MzMuMjc2aDEwLjNjMi4wNDMgMCAzLjEyOS0uNTI0IDQuMDA3LTEuOTMzbDEuMzU3LTIuMTc3LjE0LjAyM2MxLjYyMy4yNzEgMi40NDYuOCAyLjUxNiAxLjYxNC4wMjkuMzM0LS4wOS42MzgtLjM0NC44NzktLjMwMy4yODctLjc2OC40NTMtMS4yNzcuNDU1LTEuMDM3LjAwMy0xLjQ1My4zNTYtMS44NTYgMS4xNGg4LjcyYy4yOTQgMCAuNDItLjA4NS42MDMtLjI3NyAwIC4yMS4yMDIuMjc2LjQzMi4yNzZoMTIuODk4Yy44NyAwIDEuMjQ4LS4yMDEgMS42ODItLjg5OGwxLjUxLTIuNDI0Yy4zNDYtLjU1Mi43NzMtLjc2OCAxLjUyNS0uNzY4aDIuMjc0YTguMjkzIDguMjkzIDAgMDAtMS4xNC44MjZjLS40My4zODktLjg0Ny45MjYtLjkyMyAxLjYyLS4wNTMuNDg1LjA4My44OTkuMzkxIDEuMTk3LjMwMy4yOTMuNzQ5LjQ0NyAxLjI4OC40NDdoNS4zMDJjLjI5NCAwIC40Mi0uMDg0LjYwMi0uMjc2LjAwMi4yMS4yMDMuMjc2LjQzMy4yNzZoMTEuMTU3Yy4yOTMgMCAuNDItLjA4NC42MDItLjI3Ni4wMDIuMjEuMjAzLjI3Ni40MzMuMjc2aDE2LjVjLjk5NCAwIDEuNDk4LS4yODMgMS42ODYtLjk0OGwuMDU3LS4yMDQtNy44LjAwM3ptLTQ1LjE5OC0yLjQyOGMuMjI0LS41NjYuNzQ0LS42MTMgMS4yMTQtLjYxM2gyLjU0M2wtLjE3Ni40NTNjLS4yMDYuNTMyLS42NzMuNTc3LTEuMDk1LjU3N2gtMi42NTJsLjE2Ni0uNDE3em0tMjMuMTI0IDEuNjYyYy0uMzUxLjU2NC0uNzY0Ljc3NC0xLjUyNC43NzNoLTEuMjU3bDEuMzYtMi4xODJjLjM0NC0uNTUzLjc3MS0uNzY4IDEuNTIzLS43NjhoMS4yNTZsLTEuMzU4IDIuMTc3em01MC40MzIgMGMtLjM1MS41NjQtLjc2NC43NzQtMS41MjQuNzczaC0xLjI1N2wxLjM2LTIuMTgyYy4zNDQtLjU1My43NzEtLjc2OCAxLjUyMy0uNzY4aDEuMjU2bC0xLjM1OCAyLjE3N3onLz48Zz48cGF0aCBkPSdNNy43NzcgMjcuMTg0di0xLjExMmg1Ljg1djEuMTEyaC01Ljg1ek0xMC43MDIgMjkuNDg4aDEuODQ0VjI3Ljc2SDguODU4djEuNzI4aDEuODQ0TTguODU4IDI1LjQ5N2MtLjAwNS0uOTU0LS4yNi0xLjg4NS0xLjA0NC0yLjUyaDUuNzc2Yy0uNzgzLjYzNS0xLjAzOCAxLjU2Ni0xLjA0NCAyLjUySDguODU4ek0zLjk3MyAyMS4xNDN2LS44MjFoMTMuNDU5di44MkgzLjk3MXpNNC41NzUgMjQuMTAyYy43ODYtLjE2NCAxLjYzNC0uNTkzIDIuMTk2LTEuMTI0SDQuNDNsLjE0NCAxLjEyNHpNMTYuODMgMjQuMTAyYy0uNzg2LS4xNjQtMS42MzQtLjU5My0yLjE5Ni0xLjEyNGgyLjM0bC0uMTQ1IDEuMTI0ek0zLjc0NiAxOC41MjFDMy4wMDggMTQuMjY4IDEuNTg0IDkuODM5LjAxNyA2LjkyNmMxLjY4Mi44ODkgMy40OSAyLjMgNS40MjUgNC4yMzFhMjIuNzMxIDIyLjczMSAwIDAwLTIuNDA3LS40OTZjMS4xMTkgMi41NzYgMi4wNDMgNS4yMDQgMi44ODMgNy44NkgzLjc0NnpNMTcuNjU4IDE4LjUyMWMuNzM4LTQuMjUzIDIuMTYyLTguNjgyIDMuNzI5LTExLjU5NS0xLjY4Mi44ODktMy40OSAyLjMtNS40MjUgNC4yMzEuODAyLS4yMSAxLjYwNS0uMzc2IDIuNDA3LS40OTYtMS4xMTggMi41NzYtMi4wNDMgNS4yMDQtMi44ODMgNy44NmgyLjE3MnpNMy4yNiAxOS44OTR2LS44MzJoMTQuODg1di44MzJIMy4yNTl6TTguMTk0IDYuNDc2YzEuMTQ5LTEuOTI1IDIuMTM1LTQuMTEzIDIuNTA4LTYuMzguMzczIDIuMjY3IDEuMzYgNC40NTUgMi41MDggNi4zOC0uNDA5LS4xOC0uODQyLS4zNy0xLjMyMy0uNTc3LS40MTYtLjE4LS41OTMtLjA3NC0uNTc4LjM0NC4xMzggNC4wODkuNzU1IDguNzM4IDIuOTQ3IDEyLjI3OGgtMi41ODJhMjAuMjMgMjAuMjMgMCAwMS0uOTcyLTIuNzg5IDIwLjIyMiAyMC4yMjIgMCAwMS0uOTcyIDIuNzg5SDcuMTQ4YzIuMTkyLTMuNTQgMi44MS04LjE5IDIuOTQ4LTEyLjI3OC4wMTQtLjQxOC0uMTYzLS41MjQtLjU4LS4zNDQtLjQ4LjIwOC0uOTEzLjM5Ny0xLjMyMi41Nzd6TTMuMjYgMjIuNDAydi0uODMxaDE0Ljg4NXYuODMxSDMuMjU5eicvPjwvZz48L2c+PC9zdmc+Cg==" alt="" style="width: 100%; border-radius: 50px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: center;">
+                    <ul class="navbar-nav mb-2 mb-lg-0 navbar-nav me-auto" style="font-family: Everett-Medium,sans-serif; font-size: 14px; padding-left: 15px;">
+                        <li class="nav-item botonmenu">
+                            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#ingresar" aria-current="page" href="#">Modelo</a>
+                        </li>
+                        <li class="nav-item botonmenu">
+                            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#registro" aria-current="page" href="#">Marca</a>
+                        </li>
+                        <li class="nav-item botonmenu">
+                            <a class="nav-link active" aria-current="page" href="https://www.maserati.com/es/es/noticias/maserati-grecale-fuoriserie-a-special-order-from-mars">Propietarios</a>
+                        </li>
+                        <li class="nav-item botonmenu">
+                            <a class="nav-link active" aria-current="page" href="#">Compra</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-5 mb-2 mb-lg-0 my-2 justify-content-right">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" aria-current="page" role="button" data-bs-toggle="dropdown" style="color: white;" aria-expanded="false" href="#">Mi Cuenta</a>
+                          <ul class="dropdown-menu text-center" style="background: transparent;">
+                            <li><a class="dropdown-item cuenta" data-bs-toggle="modal" data-bs-target="#ingresar" aria-current="page" style="color: white;" href="#">Crear Cuenta</a></li>
+                            <li><a class="dropdown-item cuenta" data-bs-toggle="modal" data-bs-target="#registro" aria-current="page" style="color: white;" href="#">Iniciar Sesion</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    <!-- <div class="nav-item botonmenu" style="text-align: center; color: white;">
+                        <a class="nav-link active" aria-current="page" href="#">Mi Cuenta</a>
+                    </div> -->
+                </div>
+                
+            </div>
+    </nav>
+  </header>
+  <section class="col-12 mx-5">
+   <h1 class="mx-5" style="margin-top: 100px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">NUESTROS AUTOS</h1>
+
+      <div class=" col-7 mt-5 btn-group text-center mx-5" role="group">
+        <input class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-dark" for="btnradio1" style="border-radius: 0; padding: 15px 25px;">Todos los modelos</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-dark" for="btnradio2" style="border-radius: 0; padding: 15px 15px;">MACERATI</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-dark" for="btnradio3" style="border-radius: 0; padding: 15px 15px;">MC20</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+        <label class="btn btn-outline-dark" for="btnradio4" style="border-radius: 0; padding: 15px 25px;">MAYBACH</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio5">
+        <label class="btn btn-outline-dark" for="btnradio5" style="border-radius: 0; padding: 15px 25px;">Nuevos modelos</label>
+      </div>
+</section>
+<section class="col-12 mt-4 d-flex"> 
+  <div class="col-2 border-end mx-5">
+    <div class="col-8">
+      
+        <p class="text-sm-start fw-bold">Tipo de Combustible</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Electrico
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+          <label class="form-check-label" for="flexCheckChecked">
+            Hibrido enchufable
+          </label>
+        </div>
+        <p></p>
+        <p class="text-sm-start fw-bold">Carrocerias</p>
+        <p class="text-lg-start">Sedanes</p>
+        <p class="text-lg-start">SUVs</p>
+        <p class="text-lg-start">Estates</p>
+        <p class="text-lg-start">Hatchbacks</p>
+        <p class="text-lg-start">Coupes</p>
+        <p class="text-lg-start">Cabrios/Roadsters</p>
+        <p></p>
+        <p class="text-sm-start fw-bold">Ver Todo</p>
+    </div> 
+  </div>
+  <div  class="mx-3"> 
+        <div class="col-8 d-flex border-top">
+
+            <div class="col-4 mx-5 my-4">
+                <p class="text-center fw-bold">Ver Todo</p>
+                  <div class="d-flex col-6 mx-auto">
+                    <span type="button" class="d-grid gap-2 badge text-bg-primary" style="border-radius: 25px;">Nuevo</span>
+                    <span type="button" class="d-grid gap-2 badge text-bg-secondary" style="border-radius: 25px;">Electrico</span>
+                  </div>
+                <img src="auto/uno.jpg" class="img-fluid" alt="...">             
+            </div>
+
+            <div class="col-4 mx-5 my-4">
+              <p class="text-center fw-bold">Ver Todo</p>
+                <div class="d-flex col-6 mx-auto">
+                  <span type="button" class="d-grid gap-2 badge text-bg-primary">Nuevo</span>
+                  <span type="button" class="d-grid gap-2 badge text-bg-secondary">Electrico</span>
+                </div>
+              <img src="auto/dos.jpg" class="img-fluid" alt="...">             
+            </div>
+
+            <div class="col-4 mx-5 my-4">
+              <p class="text-center fw-bold">Ver Todo</p>
+                <div class="d-flex col-6 mx-auto">
+                  <span type="button" class="d-grid gap-2 badge text-bg-primary">Nuevo</span>
+                  <span type="button" class="d-grid gap-2 badge text-bg-secondary">Electrico</span>
+                </div>
+              <img src="auto/tres.jpg" class="img-fluid" alt="...">             
+            </div>
+
+          </div>
+
+
+          <div class="col-8 d-flex my-4">
+
+            <div class="col-4 mx-5">
+                <p class="text-center fw-bold">Ver Todo</p>
+                  <div class="d-flex col-6 mx-auto">
+                    <span type="button" class="d-grid gap-2 badge text-bg-primary">Nuevo</span>
+                    <span type="button" class="d-grid gap-2 badge text-bg-secondary">Electrico</span>
+                  </div>
+                <img src="auto/cuatro.jpg" class="img-fluid" alt="...">             
+            </div>
+
+            <div class="col-4 mx-5">
+              <p class="text-center fw-bold">Ver Todo</p>
+                <div class="d-flex col-6 mx-auto">
+                  <span type="button" class="d-grid gap-2 badge text-bg-primary">Nuevo</span>
+                  <span type="button" class="d-grid gap-2 badge text-bg-secondary">Electrico</span>
+                </div>
+              <img src="auto/cinco.jpg" class="img-fluid" alt="...">             
+            </div>
+
+            <div class="col-4 mx-5">
+              <p class="text-center fw-bold">Ver Todo</p>
+                <div class="d-flex col-6 mx-auto">
+                  <span type="button" class="d-grid gap-2 badge text-bg-primary">Nuevo</span>
+                  <span type="button" class="d-grid gap-2 badge text-bg-secondary">Electrico</span>
+                </div>
+              <img src="auto/uno.jpg" class="img-fluid" alt="...">             
+            </div>
+
+          </div>
+
+
+          <h1>SUV-s</h1>
+          <div class="col-8 d-flex border-top">
+  
+
+            <div class="col-4 mx-5 my-4">
+                <p class="text-center fw-bold">Ver Todo</p>
+                  <div class="d-flex col-6 mx-auto">
+                    <span type="button" class="d-grid gap-2 badge text-bg-primary">Nuevo</span>
+                    <span type="button" class="d-grid gap-2 badge text-bg-secondary">Electrico</span>
+                  </div>
+                <img src="img/imagen8159_NM8160_MG7777420-removebg-preview (2).png" class="img-fluid" alt="...">             
+            </div>
+
+            <div class="col-4 mx-5 my-4">
+              <p class="text-center fw-bold">Ver Todo</p>
+                <div class="d-flex col-6 mx-auto">
+                  <span type="button" class="d-grid gap-2 badge text-bg-primary">Nuevo</span>
+                  <span type="button" class="d-grid gap-2 badge text-bg-secondary">Electrico</span>
+                </div>
+              <img src="img/imagen8159_NM8160_MG7777420-removebg-preview (3).png" class="img-fluid" alt="...">             
+            </div>
+
+            <div class="col-4 mx-5 my-4">
+              <p class="text-center fw-bold">Ver Todo</p>
+                <div class="d-flex col-6 mx-auto">
+                  <span type="button" class="d-grid gap-2 badge text-bg-primary">Nuevo</span>
+                  <span type="button" class="d-grid gap-2 badge text-bg-secondary">Electrico</span>
+                </div>
+              <img src="img/x1080-removebg-preview.png" class="img-fluid" alt="...">             
+            </div>
+
+          </div>
+     
+      
+
+  </div>
+</section>
+
+</body>
+</html>

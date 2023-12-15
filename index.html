@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Oficial</title>
+    <!-- links de Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <!-- link de Fontaweson -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- link typed -->
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <style>
+        .bg{
+          background-image: url(img/fondo2.jpg);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+        .botonmenu{
+            margin-right: 30px;
+            line-height: 20px;
+            letter-spacing: 'normal';
+            cursor: pointer;
+            padding-top: 5px;
+        }
+        .gallery
+        {
+            display: flex;
+            width: 100%;
+        }
+        .gallery img
+        {
+            min-width: 0;
+            flex: 1 1 10px;
+            object-fit: cover;
+            opacity: 0.5;
+            transition: 00.5s;
+        }
+        .gallery img:hover
+        {
+            flex: 1 1 280px;
+            opacity: 1;
+            width: 200%;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Barra de Navegacion -->
+        <!-- style="background-image: linear-gradient(to bottom,#343434, rgba(253, 253, 253, 0));" -->
+        <nav class="navbar navbar-dark navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTM5JyBoZWlnaHQ9JzMwJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxnIGZpbGw9JyNGRkYnIGZpbGwtcnVsZT0nbm9uemVybyc+PHBhdGggZD0nTTEzMy4yMTggMTUuMTY5bC0yLjIyNi4wMDEuMTU3LS4yNzdjLjM2My0uNjQyLjc0NC0uODQ4IDEuNTctLjg0OGgxLjEzNmwtLjYzNyAxLjEyNHonLz48cGF0aCBkPSdNMTMwLjgxNSAxOS41MTRsMi4wNDYtMy42MTJoLTIuMjI2bC0xLjc2NiAzLjExOWMtLjIuMzUxLS40NzEuNDk0LS45MzkuNDk1bC01LjQxLjAwMiAyLjE4OC0zLjg2NGMuMzA4LS41NDQuNDI1LS41ODMgMS4xNDYtLjU4M2guNjQ2Yy42MzIgMCAuOTMtLjE1IDEuMTgtLjU5bC4zMDEtLjUzNS0yLjMwNy4wMDEuOTkzLTEuNzU0LTEuNDU1LjAwMWMtLjYzNCAwLS45MzEuMTQ4LTEuMTc5LjU4NWwtLjY2MSAxLjE2OWgtMS4yMTFsLS42MzcgMS4xMjVoMS4yMTJsLTIuMjM5IDMuOTUyYy0uMTk4LjM1LS40Ny40OTQtLjkzNi40OTRsLTQuODA3LjAwMiAyLjU1Ni00LjEwMWgtMS43NjVjLS40MTIgMC0uNTg5LjExOC0uODQ3LjM4OC0uMDAxLS4yOTYtLjEyMi0uMzg4LS40NDUtLjM4OC0uNDA4IDAtLjgxNi0uMDAyLTEuMjI1LS4wMDEtMi4wMDggMC0zLjEzLjU0NS00LjAwMyAxLjk0NGwtMS4wNCAxLjY2OWMtLjIxNy4zNDgtLjQ4OC40OS0uOTM1LjQ5bC0zLjA5Ny4wMDFjLTEuMTIyIDAtMS41Ni0uMTQxLTEuNjg1LS42NTctLjEzNC0uNTU2LjE1LTEuMDA4IDEuNjUyLTEuODgybC44NS0uNDk0Yy4zOTYtLjIzLjU1NS0uMzUuNTAzLS42LS4wNDgtLjIyNC0uMjAyLS40Ny0xLjQyOS0uNDdsLTUuODI1LjAwMWMtLjYxNiAwLS45MDMuMTQ0LTEuMTgyLjU5bC0xLjg4NCAzLjAyNWMtLjIxNy4zNDctLjQ4OC40ODgtLjkzNS40ODhoLTkuMzVsLjQtMS4wM2g0LjY2OGMuOTIxIDAgMS4zMDMtLjIwOCAxLjYzNS0uODk1bC40NDYtLjkyMWMuMTEyLS4yMzEuMjA2LS41Ni4wMTYtLjgxLS4yMi0uMjkyLS43ODQtLjQ0Ni0xLjYzMi0uNDQ2aC00LjQ4M2MtMS40MzMgMC0yLjA4Ny4zNS0yLjU5IDEuMzlsLS45MyAxLjkyNGMtLjMxOS42NTYtLjgyMy43ODgtMS41MzQuNzg4aC0zLjIwN2wuMjAyLS4yNjZjLjYzNS0uODM3LjUxMy0xLjc2OC0uMzM0LTIuNTU0LS44MzEtLjc3Mi0xLjkzNS0xLjA0NS0yLjkxMy0xLjI4M2gtMi40OTRsLTEuNzE1IDIuNzUyYy0uNzE1IDEuMTQ4LTEuNDkzIDEuMzUtMi44NjQgMS4zNUg2NC4zMmwyLjU1Ny00LjEwM2gtMS43NzJjLS40MTIgMC0uNTg5LjExOC0uODQ2LjM4OC0uMDAyLS4yOTYtLjEyMy0uMzg4LS40NDYtLjM4OC0uNDA2IDAtLjgxMS0uMDAyLTEuMjE4LS4wMDEtMi4wMDggMC0zLjEzLjU0NS00LjAwMyAxLjk0NGwtMS4wNCAxLjY2OWMtLjIxOS4zNS0uNDguNDg4LS45MzUuNDg4bC00LjYtLjAwMiAzLjktNi4yNTdjLjIyOC0uMzY2LS4wNzQtLjgxMy0uNTUtLjgxM0gzNy4xMDZjLTEuMjQgMC0xLjg1My4yNzYtMi40NCAxLjE1MWw3Ljg5Ni4wMDQtNC40MDEgNy4wNmgyLjI3M2w0LjQtNy4wNiAzLjE2Mi4wMDItNC40IDcuMDU4aDIuMjczbDQuNC03LjA1N2gzLjE2MUw0OS44IDE5LjQzNGMtLjE2Ni4yNjctLjMyNy42MzktLjE1Mi44OTguMTQ3LjIxNy41MTYuMzMyIDEuMDY4LjMzMmg1Ljk5Yy4yOTMgMCAuNDItLjA4NC42MDItLjI3Ni4wMDIuMjEuMjAzLjI3Ni40MzMuMjc2aDEwLjNjMi4wNDMgMCAzLjEyOS0uNTI0IDQuMDA3LTEuOTMzbDEuMzU3LTIuMTc3LjE0LjAyM2MxLjYyMy4yNzEgMi40NDYuOCAyLjUxNiAxLjYxNC4wMjkuMzM0LS4wOS42MzgtLjM0NC44NzktLjMwMy4yODctLjc2OC40NTMtMS4yNzcuNDU1LTEuMDM3LjAwMy0xLjQ1My4zNTYtMS44NTYgMS4xNGg4LjcyYy4yOTQgMCAuNDItLjA4NS42MDMtLjI3NyAwIC4yMS4yMDIuMjc2LjQzMi4yNzZoMTIuODk4Yy44NyAwIDEuMjQ4LS4yMDEgMS42ODItLjg5OGwxLjUxLTIuNDI0Yy4zNDYtLjU1Mi43NzMtLjc2OCAxLjUyNS0uNzY4aDIuMjc0YTguMjkzIDguMjkzIDAgMDAtMS4xNC44MjZjLS40My4zODktLjg0Ny45MjYtLjkyMyAxLjYyLS4wNTMuNDg1LjA4My44OTkuMzkxIDEuMTk3LjMwMy4yOTMuNzQ5LjQ0NyAxLjI4OC40NDdoNS4zMDJjLjI5NCAwIC40Mi0uMDg0LjYwMi0uMjc2LjAwMi4yMS4yMDMuMjc2LjQzMy4yNzZoMTEuMTU3Yy4yOTMgMCAuNDItLjA4NC42MDItLjI3Ni4wMDIuMjEuMjAzLjI3Ni40MzMuMjc2aDE2LjVjLjk5NCAwIDEuNDk4LS4yODMgMS42ODYtLjk0OGwuMDU3LS4yMDQtNy44LjAwM3ptLTQ1LjE5OC0yLjQyOGMuMjI0LS41NjYuNzQ0LS42MTMgMS4yMTQtLjYxM2gyLjU0M2wtLjE3Ni40NTNjLS4yMDYuNTMyLS42NzMuNTc3LTEuMDk1LjU3N2gtMi42NTJsLjE2Ni0uNDE3em0tMjMuMTI0IDEuNjYyYy0uMzUxLjU2NC0uNzY0Ljc3NC0xLjUyNC43NzNoLTEuMjU3bDEuMzYtMi4xODJjLjM0NC0uNTUzLjc3MS0uNzY4IDEuNTIzLS43NjhoMS4yNTZsLTEuMzU4IDIuMTc3em01MC40MzIgMGMtLjM1MS41NjQtLjc2NC43NzQtMS41MjQuNzczaC0xLjI1N2wxLjM2LTIuMTgyYy4zNDQtLjU1My43NzEtLjc2OCAxLjUyMy0uNzY4aDEuMjU2bC0xLjM1OCAyLjE3N3onLz48Zz48cGF0aCBkPSdNNy43NzcgMjcuMTg0di0xLjExMmg1Ljg1djEuMTEyaC01Ljg1ek0xMC43MDIgMjkuNDg4aDEuODQ0VjI3Ljc2SDguODU4djEuNzI4aDEuODQ0TTguODU4IDI1LjQ5N2MtLjAwNS0uOTU0LS4yNi0xLjg4NS0xLjA0NC0yLjUyaDUuNzc2Yy0uNzgzLjYzNS0xLjAzOCAxLjU2Ni0xLjA0NCAyLjUySDguODU4ek0zLjk3MyAyMS4xNDN2LS44MjFoMTMuNDU5di44MkgzLjk3MXpNNC41NzUgMjQuMTAyYy43ODYtLjE2NCAxLjYzNC0uNTkzIDIuMTk2LTEuMTI0SDQuNDNsLjE0NCAxLjEyNHpNMTYuODMgMjQuMTAyYy0uNzg2LS4xNjQtMS42MzQtLjU5My0yLjE5Ni0xLjEyNGgyLjM0bC0uMTQ1IDEuMTI0ek0zLjc0NiAxOC41MjFDMy4wMDggMTQuMjY4IDEuNTg0IDkuODM5LjAxNyA2LjkyNmMxLjY4Mi44ODkgMy40OSAyLjMgNS40MjUgNC4yMzFhMjIuNzMxIDIyLjczMSAwIDAwLTIuNDA3LS40OTZjMS4xMTkgMi41NzYgMi4wNDMgNS4yMDQgMi44ODMgNy44NkgzLjc0NnpNMTcuNjU4IDE4LjUyMWMuNzM4LTQuMjUzIDIuMTYyLTguNjgyIDMuNzI5LTExLjU5NS0xLjY4Mi44ODktMy40OSAyLjMtNS40MjUgNC4yMzEuODAyLS4yMSAxLjYwNS0uMzc2IDIuNDA3LS40OTYtMS4xMTggMi41NzYtMi4wNDMgNS4yMDQtMi44ODMgNy44NmgyLjE3MnpNMy4yNiAxOS44OTR2LS44MzJoMTQuODg1di44MzJIMy4yNTl6TTguMTk0IDYuNDc2YzEuMTQ5LTEuOTI1IDIuMTM1LTQuMTEzIDIuNTA4LTYuMzguMzczIDIuMjY3IDEuMzYgNC40NTUgMi41MDggNi4zOC0uNDA5LS4xOC0uODQyLS4zNy0xLjMyMy0uNTc3LS40MTYtLjE4LS41OTMtLjA3NC0uNTc4LjM0NC4xMzggNC4wODkuNzU1IDguNzM4IDIuOTQ3IDEyLjI3OGgtMi41ODJhMjAuMjMgMjAuMjMgMCAwMS0uOTcyLTIuNzg5IDIwLjIyMiAyMC4yMjIgMCAwMS0uOTcyIDIuNzg5SDcuMTQ4YzIuMTkyLTMuNTQgMi44MS04LjE5IDIuOTQ4LTEyLjI3OC4wMTQtLjQxOC0uMTYzLS41MjQtLjU4LS4zNDQtLjQ4LjIwOC0uOTEzLjM5Ny0xLjMyMi41Nzd6TTMuMjYgMjIuNDAydi0uODMxaDE0Ljg4NXYuODMxSDMuMjU5eicvPjwvZz48L2c+PC9zdmc+Cg==" alt="" style="width: 100%; border-radius: 50px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: center;">
+                    <ul class="navbar-nav mb-2 mb-lg-0 navbar-nav me-auto" style="font-family: Everett-Medium,sans-serif; font-size: 14px; padding-left: 15px;">
+                        <li class="nav-item botonmenu">
+                            <a class="nav-link active" aria-current="page" href="modules/detalles/link.html">Modelo</a>
+                        </li>
+                        <li class="nav-item botonmenu">
+                            <a class="nav-link active" aria-current="page" href="#">Marca</a>
+                        </li>
+                        <li class="nav-item botonmenu">
+                            <a class="nav-link active" aria-current="page" href="https://www.maserati.com/es/es/noticias/maserati-grecale-fuoriserie-a-special-order-from-mars">Propietarios</a>
+                        </li>
+                        <li class="nav-item botonmenu">
+                            <a class="nav-link active" aria-current="page" href="#">Compra</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-5 mb-2 mb-lg-0 my-2 justify-content-right">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" aria-current="page" role="button" data-bs-toggle="dropdown" style="color: white;" aria-expanded="false" href="#">Mi Cuenta</a>
+                          <ul class="dropdown-menu text-center" style="background: transparent;">
+                            <li><a class="dropdown-item cuenta" data-bs-toggle="modal" data-bs-target="#ingresar" aria-current="page" style="color: white;" href="#">Crear Cuenta</a></li>
+                            <li><a class="dropdown-item cuenta" data-bs-toggle="modal" data-bs-target="#registro" aria-current="page" style="color: white;" href="#">Iniciar Sesion</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    <!-- <div class="nav-item botonmenu" style="text-align: center; color: white;">
+                        <a class="nav-link active" aria-current="page" href="#">Mi Cuenta</a>
+                    </div> -->
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <!-- Carrosel -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/fondo4.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/fondo.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/fondo3.jpg" class="d-block w-100"  alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/fondo5.jpg" class="d-block w-100" alt="...">
+            </div>
+            <p class="letrasdinamicas">ARANCA TU MOTOR<br><span class="auto-type letracambia"></span></p>
+        </div>
+    </div>
+    <!-- barras de imagenes -->
+    <div class="">
+        <div class="gallery">
+            <img src="img/auto001.png" alt="">
+            <img src="img/fondo.jpg" alt="">
+            <img src="img/regilla001.jpg" alt="">
+            <img src="img/regilla002.jpg" alt="">
+            <img src="img/05-desktop.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- demostracion grande -->
+    <div style="background-color: rgb(223, 217, 217);">
+        <p style="text-align: center; font-size:30px; color: rgb(4, 4, 58); margin: 0px; padding: 20px 0px"><b>NUEVOS MODELOS</b></p>
+    </div>
+    <section>
+        <div class="d-flex justify-content-center row">
+            <div class="card col-lg-4 col-md-6 col-sm-12 col-12 p-0">
+                <img src="img/img6/img004.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="padding-left: 35px; color: #ffffff; margin-top: -135px;">
+                    <h5 class="card-title" style="font-size: 35px;">THE X4</h5>
+                    <a href="#" class="btn btn-light imagengrande">Mas información</a>
+                </div>
+            </div>
+            <div class="card col-lg-4 col-md-6 col-sm-12 col-12 p-0">
+                <!-- sirve para rotar 180 grados la imagen
+                style="transform: scaleX(-1);" -->
+                <img src="img/img6/img005.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="padding-left: 35px; color: #ffffff; margin-top: -135px;">
+                    <h5 class="card-title" style="font-size: 35px;">THE X3</h5>
+                    <a href="#" class="btn btn-light imagengrande">Mas información</a>
+                </div>
+            </div>
+            <div class="card col-lg-4 col-md-6 col-sm-12 col-12 p-0">
+                <!-- sirve para rotar 180 grados la imagen
+                style="transform: scaleX(-1);" -->
+                <img src="img/img6/img006.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="padding-left: 35px; color: #ffffff; margin-top: -135px;">
+                    <h5 class="card-title" style="font-size: 35px;">THE X3</h5>
+                    <a href="#" class="btn btn-light imagengrande">Mas información</a>
+                </div>
+            </div>
+            <div class="card col-lg-4 col-md-6 col-sm-12 col-12 p-0">
+                <img src="img/img6/img008.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="padding-left: 35px; color: #ffffff; margin-top: -135px;">
+                    <h5 class="card-title" style="font-size: 35px;">THE X4</h5>
+                    <a href="#" class="btn btn-light imagengrande">Mas información</a>
+                </div>
+            </div>
+            <div class="card col-lg-4 col-md-6 col-sm-12 col-12 p-0">
+                <!-- sirve para rotar 180 grados la imagen
+                style="transform: scaleX(-1);" -->
+                <img src="img/img6/img007.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="padding-left: 35px; color: #ffffff; margin-top: -135px;">
+                    <h5 class="card-title" style="font-size: 35px;">THE X3</h5>
+                    <a href="#" class="btn btn-light imagengrande">Mas información</a>
+                </div>
+            </div>
+            <div class="card col-lg-4 col-md-6 col-sm-12 col-12 p-0">
+                <!-- sirve para rotar 180 grados la imagen
+                style="transform: scaleX(-1);" -->
+                <img src="img/img6/img004.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="padding-left: 35px; color: #ffffff; margin-top: -135px;">
+                    <h5 class="card-title" style="font-size: 35px;">THE X3</h5>
+                    <a href="#" class="btn btn-light imagengrande">Mas información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- vehiculos destatados -->
+    <section style="margin-top: 25px;">
+        <div class="row justify-content-center">
+            <div  class="col-lg-9 col-md-12 col-sm-11 col-12" style="background-color: rgb(255, 255, 255); margin: 22px 0 15px 0;">
+                <p style="text-align: left; font-size:35px; color: rgb(4, 4, 58); margin: 0px; padding: 20px 0px 0px 0px; font-family: 'Times New Roman', Times, serif;"><b>VEHÍCULOS DESTACADOS</b></p>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center row">
+            <div class="card col-lg-5 col-md-6 col-sm-11 col-12 p-0" style="border: none;">
+                <div class="ratio ratio-16x9">
+                    <!-- <iframe src="https://www.youtube.com/embed/w8SxqaTxVJE" title="YouTube video" allowfullscreen></iframe> -->
+                    <iframe width="1600" height="757" src="https://www.youtube.com/embed/29YYp0JVEHM" title="Presentacion Maserati Levante Hybrid" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="card col-lg-4 col-md-6 col-sm-11 col-12 p-0" style="border: none;">
+                <div class="card-body" style="padding-left: 35px;">
+                    <h5 class="card-title" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 32px;">DESCUBRE A LOS NUEVOS MASERATI EN SU VIAJE POR BOLIVIA</h5>
+                    <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit ut, soluta assumenda maxime</p>
+                    <div style="margin-top: 15px;">
+                        <a href="#" class="btn" style="background-color: rgb(204, 48, 48); color: white; padding: 10px 35px; border-radius: 0;">VER VIDEOS</a>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <a href="#" class="btn" style="background-color: rgb(238, 238, 238); color: rgb(32, 32, 32); padding: 10px 35px; border-radius: 0;">VER VEHICULOS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="margin-top: 25px; margin-bottom: 50px;">
+        <div class="d-flex justify-content-center row">
+            <div class="card col-lg-4 col-md-6 col-sm-11 col-11 p-0" style="border: none;">
+                <div class="card-body" style="padding-left: 35px;">
+                    <h5 class="card-title" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 32px;">DESCUBRE A LOS NUEVO MASERATI</h5>
+                    <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit ut, soluta assumenda maxime</p>
+                    <div style="margin-top: 15px;">
+                        <a href="#" class="btn" style="background-color: rgb(204, 48, 48); color: white; padding: 10px 35px; border-radius: 0;">VER VIDEOS</a>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <a href="#" class="btn" style="background-color: rgb(238, 238, 238); color: rgb(32, 32, 32); padding: 10px 35px; border-radius: 0;">VER VEHICULOS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-lg-5 col-md-6 col-sm-11 col-11 p-0" style="border: none;">
+                <div class="ratio ratio-16x9">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/EJK45Y0nCMU" title="2022 Maserati MC20 - Wild Coupe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- imagenes pegadas -->
+    <section>
+        <!-- <div class="row">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/sin fondo/Presentacion-Maserati-MC20-18-removebg-preview.png">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="img/sin fondo/Presentacion-Maserati-MC20-18-removebg-preview.png">
+                        <h2 style="font-family: 'Times New Roman', Times, serif;">Levante</h2>
+                        <h1 style="font-family: 'Times New Roman', Times, serif;">Precio: $249,90</h1>
+                    </div>
+                </div>
+            </div>
+           <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/sin fondo/05-desktop-removebg-preview (3).png">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="img/sin fondo/05-desktop-removebg-preview (3).png">
+                        <h2 style="font-family: 'Times New Roman', Times, serif;">Quadis</h2>
+                        <h1 style="font-family: 'Times New Roman', Times, serif;">Precio: $249,90</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/sin fondo/1366_2000-removebg-preview (3).png">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="img/sin fondo/1366_2000-removebg-preview (3).png">
+                        <h2 style="font-family: 'Times New Roman', Times, serif;">Diariomotor</h2>
+                        <h1 style="font-family: 'Times New Roman', Times, serif;">Precio: $249,90</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/sin fondo/imagen8159_NM8160_MG7777420-removebg-preview (3).png">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="img/sin fondo/imagen8159_NM8160_MG7777420-removebg-preview (3).png">
+                        <h2 style="font-family: 'Times New Roman', Times, serif;">MC20</h2>
+                        <h1 style="font-family: 'Times New Roman', Times, serif;">Precio: $249,90</h1>
+                    </div>
+                </div>
+           </div>
+           <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/sin fondo/maserati-mc20-gt2-1-1658835195-removebg-preview (2).png">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="img/sin fondo/maserati-mc20-gt2-1-1658835195-removebg-preview (2).png">
+                        <h2 style="font-family: 'Times New Roman', Times, serif;">GranTurismo</h2>
+                        <h1 style="font-family: 'Times New Roman', Times, serif;">Precio: $249,90</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/sin fondo/auto003-removebg-preview.png">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="img/sin fondo/auto003-removebg-preview.png">
+                        <h2 style="font-family: 'Times New Roman', Times, serif;">Autobild</h2>
+                        <h1 style="font-family: 'Times New Roman', Times, serif;">Precio: $249,90</h1>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </section> -->
+
+    <!-- Catalogo -->
+    <!-- <section class="section">
+        <div class="container row" style="justify-content: center;">
+            <div class="card1 col-lg-4 col-md-6 col-sm-12" style="margin: 10px;">
+                <div class="imgBx">
+                    <img src="img/sin fondo/maserati-mc20-gt2-1-1658835195-removebg-preview (2).png">
+                </div>
+                <div class="details">
+                    <h1>Maserati</h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit dolore excepturi. Accusamus dolores cupiditate 
+                    </p>
+                    <h4>Color</h4>
+                    <ul class="size">
+                        <li>Rojo</li>
+                        <li>Azul</li>
+                        <li>Gris</li>
+                        <li>Negro</li>
+                        <li>Verde</li>
+                    </ul>
+                    <div class="group">
+                        <h2><sub>$</sub>119<small>.99</small></h2>
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    
+    <!-- Modal Ingresar-->
+    <div class="modal fade" id="ingresar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg row">
+          <div class="col bg d-none d-lg-block" style="padding: 0px;">
+          </div>
+          <div class="modal-content col border-none mx-0" style="border-radius: 0px; border-width:0; background-color: #0000006c; color: white;">
+            <!-- <img src="image.jpg" style="width: 100%" alt=""> -->
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Inicia sesion</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-2">
+                <label for="" class="form-label">Correo electrónico</label>
+                <input type="text" class="form-control" placeholder="Correo electrónico">
+              </div>
+              <div class="mb-2">
+                <label for="inputPassword5" class="form-label">Contraseña</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock" placeholder="Contraseña">
+              </div>
+              <div class="mt-3">
+                <button type="button" class="btn btn-success w-100">Iniciar sesión</button>
+              </div>
+              <div class="mb-2">
+                <label for="inputPassword5" class="form-label">Al continuar con tu correo o tu red social aceptas los <a href="#">términos y condiciones</a> y el <a href="#">aviso de privacidad</a></label>
+              </div>
+              <div class="text-center mb-0">
+                <label for="" class="form-label"><a href="#" style="text-decoration: none; color: #ffffff;">Olvidé mi contraseña</a></label>
+              </div>
+              <div class="text-center mb-0">
+                <label for="" class="form-label">¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#registro" style="text-decoration: none; color: #ffffff;">Regístrate -> </a></label>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Modal registro-->
+    <div class="modal fade" id="registro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="font-family: 'Times New Roman', Times, serif;">
+          <div class="modal-content" style="border-radius: 0px; border-width:0; background-color: #000000c9; color: white;">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Regístrate</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex justify-content-center row">
+                <div class="mb-2 col-lg-6 col-md-6 col-sm-12 text-center">
+                  <!-- <a href=""><i class="fab fa-facebook-f">Facebook</i></a> -->
+                  <!-- <label for="" class="form-label">Registrar con Facebook</label> -->
+                  <button type="button" class="btn btn-outline-primary border-primary w-100"><i class="fab fa-facebook"></i> Registrar con Facebook</button>
+                </div>
+                <div class="mb-2 col-lg-6 col-md-6 col-sm-12 text-center">
+                  <button type="button" class="btn btn-outline-danger border-danger w-100"><i class="fab fa-google"></i> Registrar con Google</button>
+                </div>
+                <div class="mb-2 col-lg-6 col-md-6 col-sm-12">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" style="background-color: rgba(0, 0, 0, 0.658); color: white;" placeholder="Nombre">
+                </div>
+                <div class="mb-2 col-lg-6 col-md-6 col-sm-12">
+                  <label for="" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" style="background-color: rgba(0, 0, 0, 0.658); color: white;" placeholder="Apellido">
+                </div>
+              </div>
+              <div class="mb-2">
+                <label for="" class="form-label">Correo electrónico</label>
+                <input type="text" class="form-control" style="background-color: rgba(0, 0, 0, 0.658); color: white;" placeholder="Correo electrónico">
+              </div>
+              <div class="mb-2">
+                <label for="inputPassword5" class="form-label">Contraseña</label>
+                <input type="password" id="inputPassword5" style="background-color: rgba(0, 0, 0, 0.658); color: white;" class="form-control" aria-labelledby="passwordHelpBlock" placeholder="Contraseña">
+              </div>
+              <div class="mb-2">
+                <label for="inputPassword5" class="form-label">Al continuar con tu correo o tu red social aceptas los <a href="#">términos y condiciones</a> y el <a href="#">aviso de privacidad</a></label>
+              </div>
+              <div class="mb-2">
+                <button type="button" class="btn btn-success w-100">Registrarme</button>
+              </div>
+              <div class="text-center mb-0">
+                <label for="" class="form-label">¿Ya tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#ingresar" style="text-decoration: none; color: #ffffff;">Inicia sesión-> </a></label>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <footer style="background-color: rgb(0, 0, 0);">
+        <div style="padding: 50px 80px;">
+            <div class="accordion accordion-flush" id="accordionFlushExample" style="--bs-accordion-bg:#000; --bs-accordion-color:#b4b4b4;--bs-accordion-btn-color:#dfdfdf;--bs-accordion-active-color:#fff;--bs-accordion-active-bg:#000;">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Nuestros vehiculos
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div style="padding: 4px;">Sedanes</div>
+                            <div style="padding: 4px;">SuVs</div>
+                            <div style="padding: 4px;">Estates</div>
+                            <div style="padding: 4px;">Coupes</div>
+                            <div style="padding: 4px;">Cabrios</div>
+                            <div style="padding: 4px;">Roadsters</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Accesorios para los autos
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div style="padding: 4px;">
+                                Encuentra tu concesionario
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Servicios de Cliente
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div style="padding: 4px;">Servicio y Mantenimiento</div>
+                            <div style="padding: 4px;">Reparacion y Garantia</div>
+                            <div style="padding: 4px;">Recambios y Accesorios</div>
+                            <div style="padding: 4px;">Manuales de instrucciones</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Tecnologia
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div style="padding: 4px;">Maserati-EQ</div>
+                            <div style="padding: 4px;">Carga y Servicios</div>
+                            <div style="padding: 4px;">Maserati-AMG</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        Acerca de Nosotros
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div style="padding: 4px;">Nuestra historia</div>
+                            <div style="padding: 4px;">Semiconductores</div>
+                            <div style="padding: 4px;">Sostenible</div>
+                            <div style="padding: 4px;">Innovation</div>
+                            <div style="padding: 4px;">Diseño</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div style="padding: 0 0 50px 0; font-size: 25px; text-align: center;">
+                <h5 style="color: #dfdfdf;">MASERATI SOCIAL</h5>
+                <a href="#" style="padding: 0 5px;"><i style="color: #fff;" class="fab fa-youtube"></i></a>
+                <a href="#" style="padding: 0 5px;"><i style="color: #fff;" class="fab fa-facebook"></i></a>
+                <a href="#" style="padding: 0 5px;"><i style="color: #fff;" class="fab fa-instagram"></i></a>
+                <a href="#" style="padding: 0 5px;"><i style="color: #fff;" class="fab fa-codepen"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        var nav = document.querySelector('nav');
+        window.addEventListener('scroll', function(){
+            if (window.pageYOffset > 100) {
+                nav.classList.add('bg-dark', 'shadow');
+            }else{
+                nav.classList.remove('bg-dark', 'shadow');
+            }
+        })
+    </script>
+    <script>
+        var typed = new Typed(".auto-type",{
+            strings:["Veloz","Lujoso","Novedoso","Brillante"],
+            typeSpeed:50,
+            backSpeed:50,
+            loop:true
+        })
+    </script>
+</body>
+</html>
